@@ -1,0 +1,9 @@
+# Manuscript compilation and visual inspection
+
+2026-09-22. English manuscript: `work/manuscript.typ`, local template `work/report.typ`, output `work/manuscript.pdf`. Typst 0.15.1 and pdftoppm 26.09.0; five pages. The technical-writing skill guided a notation, paragraph and claim-strength pass. The PDF artifact-start marker was invoked once before generation.
+
+From work/: `typst compile manuscript.typ manuscript.pdf`, then `pdftoppm -png -scale-to 1400 manuscript.pdf ../../../tmp/pdfs/final`. Both exited zero. Earlier complete renders were inspected page by page. Inspection found a complexity heading/setup separated from its formula and excessive title justification; an explicit page break and local title paragraph setting repaired them. All five repaired-layout pages were visually inspected. The final editorial update corrected the SAT conference title and recorded the completed prepared suite; affected pages 4 and 5 were re-rendered and visually inspected again.
+
+Final checks: no clipping, overlap or missing glyphs; readable equations, body text and reproducibility commands; setup and complexity equation together; no accidental blank page. The source/target conventions and binary-encoding limitation are explicit. The figure shows the two anchors and four representative item vertices with exactly eight incidences, no anchor-anchor or item-item edge; labels and ellipsis are legible and the caption explains omitted items. The general proof, every-output recovery, bit bounds and finite-test limitations agree with the reviewed artifacts. No venue, author identity or novelty claim was invented.
+
+Rendered PNGs are disposable inspection outputs under ignored tmp/, not campaign evidence requiring duplication. The compiled PDF and this inspection record are retained. Independent review assessed the mathematical artifacts; final manuscript layout inspection is by the main researcher, not a claim of human certification.

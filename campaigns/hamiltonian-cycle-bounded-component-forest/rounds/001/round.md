@@ -14,8 +14,14 @@ Prior evidence: Prepare commit 865be96 passes exact cycle and partition fixtures
 
 The candidate and [general proof](../../work/proof.md) are complete. They use two anchor vertices with only 2M edges and binary-encoded weights, not a dense complete graph or a tree-to-path assumption. [Supporting literature](literature.md) attributes the standard digit mechanism and records the starting issue's limitation.
 
-Two independent target formulations are running: general integer labels/depth connectivity in check.py and exact unsigned bit-vector sums with direct connectivity filtering in verify.py. The latter uses enough bits for the sum of all nonnegative weights, so no subset sum can overflow. [Partial progress](progress.txt) is retained without interpreting unfinished cases as NO. Final verification, independent review and experience extraction remain pending.
+The two independent target formulations now both have completed evidence. The prepared general-K label/depth formulation passed 9 candidate instances and 17 recoveries, after its bounded variables and capacity arithmetic were expressed exactly as unsigned bit vectors. The additional Boolean two-block formulation with direct connectivity filtering passed 80 instances, 97 valid target outputs and 127 recoveries. Self-tests cover 9 source and 7 target fixtures. See [verification](../../work/verification.md) and [oracle rerun](../../work/evidence/oracle-refinement/result.txt).
+
+Outcome: supported. The [registered independent review](../../reviews/initial/review.md) advances the complete construction and independently enumerates 131,072 assignments for each of triangle and path. Its [capacity addendum](../../reviews/oracle-refinement/review.md) proves exact arithmetic equivalence and checks 2,106 assignments. The final bounded-label representation has a focused follow-up review. No substantive proof repair or new mechanism was needed. The radix parameter and oracle representation changes remain in this round.
+
+Four incomplete executions are retained: two original-radix runs canceled before its refinement, the prepared run lost during the user-requested CLI interruption, and the capacity-only mixed-theory run superseded by bounded labels. [Partial progress](progress.txt), [radix change](radix-change.md) and [oracle record](../../work/evidence/oracle-refinement/record.md) distinguish them from completed results. None certifies NO; no solver timeout was introduced.
+
+Experience extraction: [two-anchor subset sum](../../../../research/experience/two-anchor-subset-sum-partition.md), one distinct entry created and updated with review, one pending shared promotion. No measured discovery benefit or token saving is claimed. The English five-page paper was compiled and visually inspected; the [inspection record](../../work/evidence/paper/inspection.md) records repairs and final checks.
 
 ## Next action
 
-Implement the finite construction, prove each direction, run the prepared target oracle before further verification.
+Commit the completed evidence and manuscript, then stop as instructed. Human expert review is pending, not a reason to start another campaign. Budget: 20 authorized, 1 used, 19 unused; 1 distinct composite mechanism. No claim of strong hardness, earliest priority or practical target-solving performance.
