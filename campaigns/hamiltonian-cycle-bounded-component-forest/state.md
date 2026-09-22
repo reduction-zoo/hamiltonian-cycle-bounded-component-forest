@@ -1,6 +1,6 @@
 # Campaign state
 
-Status: prepared. Budget: 20 research rounds, 0 used, 20 remaining, 0 mechanisms. Initial commit 7ae0df6. [Prepare](work/preparation.md) passed 9 source and 7 target fixtures. Next: commit Prepare before candidate construction.
+Status: round 001 in progress. Budget: 20 research rounds, 1 started, 19 unstarted, 1 mechanism. Initial commit 7ae0df6; Prepare 865be96. [Prepare](work/preparation.md) passed 9 source and 7 target fixtures. Next: construct and test the declared composed map.
 
 ## Capability probe — 2026-09-22
 
@@ -14,5 +14,6 @@ Status: prepared. Budget: 20 research rounds, 0 used, 20 remaining, 0 mechanisms
 
 | Round | Mechanism or standalone literature scope | First discriminating check | Outcome | Record |
 |---|---|---|---|---|
+| 001 | Positional clauses → carry-free subset sum → two anchors | Prepared triangle, path and articulation targets | In progress | [Round](rounds/001/round.md) |
 
 No experience entries. Next assigned question after completion: hamiltonian-path-consecutive-ones-submatrix. No board writes or publication authorized.

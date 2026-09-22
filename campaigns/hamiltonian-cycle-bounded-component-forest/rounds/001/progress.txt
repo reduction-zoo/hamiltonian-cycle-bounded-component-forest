@@ -1,0 +1,15 @@
+2026-09-22, partial live-run snapshot, not an interruption or final result.
+Prepared candidate loop command (repository root):
+uv run --no-sync python campaigns/hamiltonian-cycle-bounded-component-forest/work/check.py --candidate campaigns/hamiltonian-cycle-bounded-component-forest/work/algorithm.py
+Reported pass: empty 1, singleton 1, single-edge 1, triangle 2, three-path 1,
+square 2, complete-four 6 valid target outputs/recoveries.
+Still running: articulation-two-triangles and signed-large-labels; no NO inferred.
+
+Independent verifier command (repository root):
+uv run --no-sync python campaigns/hamiltonian-cycle-bounded-component-forest/work/verify.py --candidate campaigns/hamiltonian-cycle-bounded-component-forest/work/algorithm.py
+All 12 simple-graph instances on 0..3 vertices reported passed.
+The complete four-vertex domain and selected larger/large-label cases remain in flight.
+No wall-clock limits, test failure, UNKNOWN or execution interruption.
+
+These are slow exact target solves, not candidate source solving. Both runners execute
+the actual forward target. Source truth is independently enumerated.
