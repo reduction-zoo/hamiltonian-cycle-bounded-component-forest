@@ -1,6 +1,6 @@
 # Campaign state
 
-Status: round 001 in progress. Budget: 20 research rounds, 1 started, 19 unstarted, 1 mechanism. Initial commit 7ae0df6; Prepare 865be96. [Prepare](work/preparation.md) passed 9 source and 7 target fixtures. Next: construct and test the declared composed map.
+Status: independent assessment next; prepared candidate run still in progress. Budget: 20 research rounds, 1 started, 19 unstarted, 1 mechanism. Initial commit 7ae0df6; Prepare 865be96; refined candidate and independent verification 3a29d27. [Prepare](work/preparation.md) passed 9 source and 7 target fixtures. [Additional verification](work/verification.md) completed all 80 instances/127 recovery calls against actual targets and covers the prepared graph forms. [Proof](work/proof.md) is complete. The general-K prepared runner is still solving its larger cases; no unfinished result is treated as negative or passed. Candidate will remain unchanged for registered fresh-context review.
 
 ## Capability probe — 2026-09-22
 
@@ -16,4 +16,6 @@ Status: round 001 in progress. Budget: 20 research rounds, 1 started, 19 unstart
 |---|---|---|---|---|
 | 001 | Positional clauses → carry-free subset sum → two anchors | Prepared triangle, path and articulation targets | In progress | [Round](rounds/001/round.md) |
 
-No experience entries. Next assigned question after completion: hamiltonian-path-consecutive-ones-submatrix. No board writes or publication authorized.
+Experience: 1 entry created, review and shared promotion pending: [two-anchor subset sum](../../research/experience/two-anchor-subset-sum-partition.md). Two superseded original-radix runs were explicitly canceled and returned exit 143; their incomplete outputs and the representation refinement are retained in [radix-change.md](rounds/001/radix-change.md). No negative conclusion uses those executions.
+
+Next assigned question after completion: hamiltonian-path-consecutive-ones-submatrix. No board writes or publication authorized.
