@@ -104,8 +104,14 @@ def target_solutions(t, limit=12):
         solver.add(z3.Implies(depths[v] > 0,
                              z3.Or([z3.And(colors[u] == colors[v], depths[u] < depths[v])
                                     for u in neighbors])))
+    total = sum(weights)
+    width = max(1,total.bit_length())
+    zero = z3.BitVecVal(0,width)
+    bound = z3.BitVecVal(min(B,total),width)
     for c in range(min(K,n)):
-        solver.add(z3.Sum([z3.If(colors[v] == c, weights[v], 0) for v in range(n)]) <= B)
+        weight = sum((z3.If(colors[v] == c, z3.BitVecVal(weights[v],width), zero)
+                      for v in range(n)), zero)
+        solver.add(z3.ULE(weight,bound))
     outputs = []
     while len(outputs) < limit:
         status = solver.check()

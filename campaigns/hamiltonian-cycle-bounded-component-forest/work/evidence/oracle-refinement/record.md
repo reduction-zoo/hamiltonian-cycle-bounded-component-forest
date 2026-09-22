@@ -1,0 +1,9 @@
+# Interrupted execution and exact capacity representation refinement
+
+2026-09-22. The user reports that the previous CLI received SIGINT solely to change service tier. On resume, tool session 51214 was missing and the previously observed Python process 16475 was absent. Its last retained output passed complete-four; no terminal result for articulation or large-label cases was obtained. This is an incomplete execution failure, not a NO certificate. It is separate from the two original-radix cancellations retained in round 001.
+
+Before interruption, the proposed next action was to replace only the prepared oracle's capacity arithmetic with exact unsigned bit-vector sums. That edit had not occurred: inspection confirmed the original integer Sum constraints. The replacement now uses width max(1,bit_length(sum(weights))). Every partial sum is between zero and the total, strictly below 2^width, so it cannot overflow. Clamping B to min(B,total) is equivalent for all subsets. The general-K label/depth connectivity constraints and all fixture expectations are unchanged. This is an oracle representation refinement, not a candidate or theorem change. The initial checker remains in commit 865be96; candidate review d2cb3cd assessed that version and the independently validated bit-vector capacity argument in verify.py.
+
+Rerun the complete self-test and prepared candidate suite, without timeouts. Obtain a focused review addendum on the oracle change. Prior completed 80-instance verification and candidate proof remain applicable because F and G are unchanged.
+
+Scope update: finish only this campaign, then stop; no next queue item. User reports Fast OFF and service_tier="default". Exact backend identifier remains unexposed; this report does not independently verify billing or claim a model change.
