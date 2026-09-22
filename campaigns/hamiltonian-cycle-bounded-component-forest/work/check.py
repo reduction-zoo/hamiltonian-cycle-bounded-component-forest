@@ -90,19 +90,20 @@ def target_solutions(t, limit=12):
     edges = graph_edges(list(range(n)), t["edges"])
     if n == 0:
         return [{"blocks":[]}]
-    solver = z3.Solver()
-    colors = [z3.Int(f"c{v}") for v in range(n)]
-    depths = [z3.Int(f"d{v}") for v in range(n)]
+    solver = z3.SolverFor("QF_BV")
+    index_width = n.bit_length()
+    colors = [z3.BitVec(f"c{v}",index_width) for v in range(n)]
+    depths = [z3.BitVec(f"d{v}",index_width) for v in range(n)]
     for v in range(n):
-        solver.add(colors[v] >= 0, colors[v] < min(K,n), colors[v] <= v,
-                   depths[v] >= 0, depths[v] < n)
-        solver.add(z3.Implies(colors[v] > 0,
+        solver.add(z3.ULT(colors[v],min(K,n)), z3.ULE(colors[v],v),
+                   z3.ULT(depths[v],n))
+        solver.add(z3.Implies(colors[v] != 0,
                              z3.Or([colors[u] == colors[v]-1 for u in range(v)])))
         root = z3.And([colors[v] != colors[u] for u in range(v)])
         solver.add((depths[v] == 0) == root)
         neighbors = [u for u in range(n) if tuple(sorted((u,v))) in edges]
-        solver.add(z3.Implies(depths[v] > 0,
-                             z3.Or([z3.And(colors[u] == colors[v], depths[u] < depths[v])
+        solver.add(z3.Implies(depths[v] != 0,
+                             z3.Or([z3.And(colors[u] == colors[v], z3.ULT(depths[u],depths[v]))
                                     for u in neighbors])))
     total = sum(weights)
     width = max(1,total.bit_length())

@@ -1,0 +1,19 @@
+2026-09-22; parent-observed tool session 48681, exit 0.
+From repository root:
+uv run --no-sync python campaigns/hamiltonian-cycle-bounded-component-forest/work/check.py --self-test
+uv run --no-sync python campaigns/hamiltonian-cycle-bounded-component-forest/work/check.py --candidate campaigns/hamiltonian-cycle-bounded-component-forest/work/algorithm.py
+
+self-test: 9 source fixtures, 7 target fixtures; invalid connectivity, coverage, weight, block count and trees rejected
+empty: 1 valid target outputs; recovery passed
+singleton: 1 valid target outputs; recovery passed
+single-edge: 1 valid target outputs; recovery passed
+triangle: 2 valid target outputs; recovery passed
+three-path: 1 valid target outputs; recovery passed
+square: 2 valid target outputs; recovery passed
+complete-four: 6 valid target outputs; recovery passed
+articulation-two-triangles: 1 valid target outputs; recovery passed
+signed-large-labels: 2 valid target outputs; recovery passed
+candidate: 9 instances; 17 recoveries passed
+
+Candidate unchanged from reviewed construction. No timeout, UNKNOWN or interrupted
+execution was interpreted as NO. Earlier incomplete runs remain recorded separately.
