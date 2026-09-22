@@ -16,11 +16,11 @@ Every clause is nonempty, contains distinct variables, and has width at most r (
 
 ## 2. Carry-free subset sum
 
-Let clause j have width w_j. Set h_j=2^ceil(log_2 w_j), with h_j=1 for unit clauses, and choose R=2 max_j h_j+1. Use digit positions 0,...,V-1 for variables and V,...,V+C-1 for clauses. The integer for a digit vector is its ordinary base-R value.
+Let clause j have width w_j. Set h_j=2^ceil(log_2 w_j), with h_j=1 for unit clauses, and choose R=2 max_j h_j. Since n>=3, positive exactly-one clauses have width r>=2, so R>=4. Use digit positions 0,...,V-1 for variables and V,...,V+C-1 for clauses. The integer for a digit vector is its ordinary base-R value.
 
 For each variable i create two positive items, true then false. Each has digit 1 at its variable position. At clause position V+j, its digit is 1 exactly if that truth choice satisfies a literal in clause j, and otherwise 0. For clause j add slack items with sole nonzero digit 1,2,4,...,h_j/2 at V+j; unit clauses have no slack items. The desired sum T has digit 1 at each variable position and h_j at clause position V+j. Number all variable items first in true/false pairs, followed by slack items in clause order and increasing binary weight. Let a_1,...,a_M be the resulting list and S its sum.
 
-No subset of the items produces any carry. At a variable digit the total over all items is two. At clause digit j it is w_j+h_j-1, since each literal contributes exactly one truth item and the binary slack sums to h_j-1. This is at most 2h_j-1<R. All digits are nonnegative. Thus equality to T is equivalent to equality at every digit.
+No subset of the items produces any carry. At a variable digit the total over all items is two, less than R. At clause digit j it is w_j+h_j-1, since each literal contributes exactly one truth item and the binary slack sums to h_j-1. This is at most 2h_j-1<R. All digits are nonnegative. Thus equality to T is equivalent to equality at every digit.
 
 Any subset summing to T selects exactly one truth item per variable. If t_j is the number of satisfied literals in clause j, its selected slack must sum to h_j-t_j. The available slack realizes exactly the integers 0,...,h_j-1. Because 0<=t_j<=w_j<=h_j, the clause digit can reach h_j if and only if t_j>=1. Therefore every subset summing to T decodes to a satisfying assignment, and every satisfying assignment extends to such a subset by binary slack choices. This argument includes unit clauses without slack. In particular, no carries or negative weights can simulate a satisfied clause.
 

@@ -51,7 +51,7 @@ def forward(x):
     cnf = clauses(x)
     variables = (n-1)**2
     ceilings = [1 << (len(c)-1).bit_length() for c in cnf]
-    radix = 2*max(ceilings)+1
+    radix = 2*max(ceilings)
     powers = [radix**j for j in range(variables+len(cnf))]
     items = [powers[i] for i in range(variables) for _ in range(2)]
     target = sum(powers[:variables])

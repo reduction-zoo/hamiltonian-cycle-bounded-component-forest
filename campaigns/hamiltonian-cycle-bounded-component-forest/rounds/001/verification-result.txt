@@ -1,0 +1,10 @@
+2026-09-22. Refined power-of-two radix candidate (algorithm.py change from f46ec6b).
+Repository root:
+uv run --no-sync python campaigns/hamiltonian-cycle-bounded-component-forest/work/verify.py --candidate campaigns/hamiltonian-cycle-bounded-component-forest/work/algorithm.py
+Exit 0.
+All 76 simple graphs on 0..4 labeled vertices passed.
+cycle-five: 2 target partitions; articulation-five: NO-SOLUTION.
+huge-labels path: NO-SOLUTION; huge-labels triangle: 2 target partitions.
+{"instances": 80, "max_capacity_bits": 288, "max_target_vertices": 122, "max_weight_bits": 288, "no": 67, "recoveries": 127, "target_outputs": 97, "yes": 13}
+Deterministic finite domain; up to 12 target partitions per instance; exact bit-vector sums cannot overflow; no timeouts.
+Each feasible partition was also supplied in reversed block/vertex order with an independently obtained spanning tree for each block. All outputs decoded correctly.
